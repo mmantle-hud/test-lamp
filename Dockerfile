@@ -2,15 +2,15 @@ FROM gitpod/workspace-full
 
 USER root
 
-RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
+# RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
 
-# optional: use a custom apache config.
-COPY apache/apache.conf /etc/apache2/apache2.conf
+#COPY apache/apache.conf /etc/apache2/apache2.conf
+RUN echo "include apache/apache.conf" > /etc/apache2/apache2.conf
 
 # optional: change document root folder. It's relative to your git working copy.
 ENV APACHE_DOCROOT_IN_REPO="www"
 
-#RUN echo "include apache/apache.conf" > /etc/apache2/apache2.conf
+
 #RUN echo ". apache/envvars" > /etc/apache2/envvars
 
 #RUN echo "!include mysql/mysql.cnf" > /etc/mysql/my.cnf
