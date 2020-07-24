@@ -5,7 +5,7 @@ ports:
    onOpen: open-preview
 tasks:
  - name: MySQL
-  command: >
+   command: >
     mysqld --initialize-insecure;
     mysqld &
     sleep 5;
