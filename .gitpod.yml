@@ -3,6 +3,7 @@ image:
 ports:
  - port: 8080
    onOpen: open-preview
+workspaceLocation: "."
 tasks:
  - name: Apache
    command: >
