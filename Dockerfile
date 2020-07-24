@@ -8,7 +8,7 @@ COPY apache/apache.conf /etc/apache2/apache2.conf
 #RUN echo "include /workspace/apache/apache.conf" > /etc/apache2/apache2.conf
 
 
-COPY php/php.ini /etc/php/7.4/apache2/php.ini
+#COPY php/php.ini /etc/php/7.4/apache2/php.ini
 
 
 # optional: change document root folder. It's relative to your git working copy.
