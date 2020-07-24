@@ -10,5 +10,4 @@ tasks:
  - name: Apache
    command: >
     apachectl start;
- - before: mysqladmin -u root password cit2318
- - init: bash setup/init.sh
+ - init: mysqladmin -u root password cit2318 && bash setup/init.sh
