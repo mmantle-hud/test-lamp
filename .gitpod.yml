@@ -8,3 +8,7 @@ tasks:
  - name: Apache
    command: >
     apachectl start;
+- name: Lamp
+    command: >
+        chmod 777 $GITPOD_REPO_ROOT/.htaccess;
+        cd $GITPOD_REPO_ROOT;
