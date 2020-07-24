@@ -4,13 +4,19 @@ USER root
 
 RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
 
-RUN echo "include apache/apache.conf" > /etc/apache2/apache2.conf
-RUN echo ". apache/envvars" > /etc/apache2/envvars
+# optional: use a custom apache config.
+COPY apache/apache.conf /etc/apache2/apache2.conf
 
-RUN echo "!include mysql/mysql.cnf" > /etc/mysql/my.cnf
+# optional: change document root folder. It's relative to your git working copy.
+ENV APACHE_DOCROOT_IN_REPO="www"
 
-RUN mkdir /var/run/mysqld
-RUN chown gitpod:gitpod /var/run/apache2 /var/lock/apache2 /var/run/mysqld
+#RUN echo "include apache/apache.conf" > /etc/apache2/apache2.conf
+#RUN echo ". apache/envvars" > /etc/apache2/envvars
 
-RUN addgroup gitpod www-data
+#RUN echo "!include mysql/mysql.cnf" > /etc/mysql/my.cnf
+
+#RUN mkdir /var/run/mysqld
+#RUN chown gitpod:gitpod /var/run/apache2 /var/lock/apache2 /var/run/mysqld
+
+#RUN addgroup gitpod www-data
 
