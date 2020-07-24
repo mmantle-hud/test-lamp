@@ -7,6 +7,10 @@ USER root
 COPY apache/apache.conf /etc/apache2/apache2.conf
 #RUN echo "include /workspace/apache/apache.conf" > /etc/apache2/apache2.conf
 
+
+COPY php/php.ini /etc/php/php.ini
+
+
 # optional: change document root folder. It's relative to your git working copy.
 ENV APACHE_DOCROOT_IN_REPO="www"
 

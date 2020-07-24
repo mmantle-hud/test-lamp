@@ -1,6 +1,6 @@
 <?php
 try{
-       $conn = new PDO('mysql:host=localhost;dbname=simple-examples', 'root', '');
+       $conn = new PDO('mysql:host=localhost;dbname=filmsdb', 'root', 'cit2318');
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception) 
@@ -9,9 +9,9 @@ catch (PDOException $exception)
 }
 
 //select all the students
-$query = "SELECT first_name, last_name, course FROM students";
+$query = "SELECT * FROM films";
 $resultset = $conn->query($query);
-$students = $resultset->fetchAll();
+$films = $resultset->fetchAll();
 $conn=NULL;
 
 ?>
@@ -20,17 +20,17 @@ $conn=NULL;
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>List the students</title>
+<title>List the films</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
 <body>
 <?php
 
 //check to see if there are any results
-if($students){
-	//loop over the array of students and display their name
-	foreach ($students as $student) {
-	    echo "<p>{$student['first_name']} {$student['last_name']} {$student['course']}</p>";
+if($films){
+	//loop over the array of films and display their name
+	foreach ($films as $film) {
+	    echo "<p>{$film['title']}</p>";
 	}
 }else{
 	echo "No records found";
