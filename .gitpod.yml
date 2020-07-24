@@ -4,6 +4,12 @@ ports:
  - port: 8080
    onOpen: open-preview
 tasks:
+  - name: MySQL
+    command: >
+        mysqld --initialize-insecure;
+        mysqld &
+        sleep 5;
+        cd $GITPOD_REPO_ROOT;
  - name: Apache
    command: >
     apachectl start;
