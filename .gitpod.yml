@@ -6,10 +6,7 @@ ports:
 tasks:
  - name: MySQL
    command: >
-    mysqld --initialize-insecure;
-    mysqld &
-    sleep 5;
-    cd $GITPOD_REPO_ROOT;
+    mysqld
  - name: Apache
    command: >
     apachectl start;

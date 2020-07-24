@@ -1,8 +1,8 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-mysql 
 
 USER root
 
-RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
+#RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
 
 COPY apache/apache.conf /etc/apache2/apache2.conf
 #RUN echo "include /workspace/apache/apache.conf" > /etc/apache2/apache2.conf
