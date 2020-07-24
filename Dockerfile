@@ -5,7 +5,7 @@ USER root
 # RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
 
 #COPY apache/apache.conf /etc/apache2/apache2.conf
-RUN echo "include /apache/apache.conf" > /etc/apache2/apache2.conf
+RUN echo "include /workspace/apache/apache.conf" > /etc/apache2/apache2.conf
 
 # optional: change document root folder. It's relative to your git working copy.
 ENV APACHE_DOCROOT_IN_REPO="www"
